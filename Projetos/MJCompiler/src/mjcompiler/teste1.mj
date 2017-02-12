@@ -1,0 +1,7 @@
+class ID { 
+    public static void main (String[ ] ID){
+        while( true ) {
+            if( ID )  ID = 5; else ID = 6;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+1. Program → MainClass ( ClassDeclaration )*
+
+2. MainClass → class ID { public static void main (String[ ] ID){ Statement } }
+
+3. ClassDeclaration → class ID ( extends ID )? { ( VarDeclaration )*( MethodDeclaration)*}
+
+4. VarDeclaration → Type ID ;
+
+5. MethodDeclaration → public Type ID ( ( Type ID ( , Type ID )* )? ) { ( VarDeclaration )* ( Statement )* return Expression ; }
+
+6. Type → int Type' | boolean | ID
+Type' → [] | epslon
+
+7. Statement → { ( Statement )* }
+| if ( Expression ) Statement else Statement
+| while ( Expression ) Statement
+| System.out.println ( Expression ) ;
+| ID Statement'
+
+9. Statement' → = Expression ; 
+ | [ Expression ] = Expression ;
+
+10. Expression → Op Expression Expression'
+| [ Expression ] Expression'
+| . Ponto'
+| INTEGER_LITERAL
+| true
+| false
+| ID
+| this
+| new New'
+| ! Expression
+| ( Expression )
+
+11. Expression' → Expression Expression' | epslon
+
+12. Ponto' → length Expression' | ID ( ( Expression ( , Expression ) * )? ) Expression'
+
+13. New' → int [ Expression ] | ID ( )
+
+14. Op → && | < | > | == | != | + | - | * | /
